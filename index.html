@@ -59,8 +59,8 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled id="ahorro" name="hobby">
-                                        <option value="">Mis hijos</option>
+                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled name="hobby">
+                                        <option value="" id="ahorro">Mis hijos</option>
                                     </select>
                                 </div>
                             </div>
@@ -80,8 +80,8 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled id="hobby" name="hobby">
-                                        <option value="">Viajar en familia</option>
+                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled name="hobby">
+                                        <option value="" id="hobby">Viajar en familia</option>
                                     </select>
                                 </div>
                             </div>
@@ -101,8 +101,8 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled id="premio" name="premio">
-                                        <option value="">Descuentos para el hogar</option>
+                                    <select class="form-control form-control" style="width:80%;margin-left:10%;" disabled name="premio">
+                                        <option value="" id="premio">Descuentos para el hogar</option>
                                     </select>
                                 </div>
                             </div>
@@ -145,31 +145,31 @@
         let queryString = window.location.search;
         let urlParams = new URLSearchParams(queryString);
         let perfil = urlParams.get('perfil');
-        let ahorro;
-        let hobby;
-        let premio;
         let email;
         console.log(perfil);
-        switch(perfil){
+        switch (perfil) {
             case 1:
-                ahorro = "Mis hijos";
-                hobby = "Viajar en familia";
-                premio = "Descuentos para el hogar";
+                document.getElementById('ahorro').value = "Mis hijos";
+                document.getElementById('hobby').value = "Viajar en familia";
+                document.getElementById('premio').value = "Descuentos para el hogar";
                 break;
             case 2:
-                ahorro = "Tecnología";
-                hobby = "Conciertos/Teatro";
-                premio = "Aplicaciones";
+                document.getElementById('ahorro').value = "Tecnología";
+                document.getElementById('hobby').value = "Conciertos/Teatro";
+                document.getElementById('premio').value = "Aplicaciones";
                 break;
             case 3:
-                ahorro = "Vivienda";
-                hobby = "Salir a comer";
-                premio = "Asesoría personalizada";
+                document.getElementById('ahorro').value = "Vivienda";
+                document.getElementById('hobby').value = "Salir a comer";
+                document.getElementById('premio').value = "Asesoría personalizada";
+                break;
+            default:
+                document.getElementById('ahorro').value = "Mis hijos";
+                document.getElementById('hobby').value = "Viajar en familia";
+                document.getElementById('premio').value = "Descuentos para el hogar";
                 break;
         }
-        document.getElementById('ahorro')=ahorro;
-        document.getElementById('hobby')=hobby;
-        document.getElementById('premio')=premio;
+
     </script>
 </body>
 
